@@ -3,7 +3,7 @@ const verify = require("./verifyToken");
 
 router.get("/", verify, (req, res) => {
   res.json({
-    posts: { title: "my first post", description: "data you shouldnt access" },
+    posts: { title: "Home Page", description: "Parents' dashboard" },
   });
 });
 

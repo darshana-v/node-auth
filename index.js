@@ -3,7 +3,8 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
-const postRoute = require("./routes/posts");
+const homeRoute = require("./routes/home");
+const changeProfileRoute = require("./routes/changeProfile");
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 
 // route middleware
 app.use("/api/user", authRoute);
-app.use("/api/posts", postRoute);
+app.use("/api/home", homeRoute);
+app.use("/api/changeProfile", changeProfileRoute);
 
 app.listen(3000, () => console.log("Server running"));
